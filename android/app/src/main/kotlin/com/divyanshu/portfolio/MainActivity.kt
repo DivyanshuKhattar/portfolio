@@ -1,0 +1,5 @@
+package com.divyanshu.portfolio
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
