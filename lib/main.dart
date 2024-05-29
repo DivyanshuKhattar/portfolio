@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/resources/colors.dart';
+import 'package:portfolio/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,29 +11,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Divyanshu Khattar',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
+    MaterialColor primaryOrange = const MaterialColor(
+      0xFFFE9002,
+      <int, Color>{
+        50: AppColors.appBackgroundColor,
+        100: AppColors.appBackgroundColor,
+        200: AppColors.appBackgroundColor,
+        300: AppColors.appBackgroundColor,
+        400: AppColors.appBackgroundColor,
+        500: AppColors.appBackgroundColor,
+        600: AppColors.appBackgroundColor,
+        700: AppColors.appBackgroundColor,
+        800: AppColors.appBackgroundColor,
+        900: AppColors.appBackgroundColor,
+      },
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
+    return MaterialApp(
+      builder: (BuildContext context, Widget? child) {
+        final MediaQueryData data = MediaQuery.of(context);
+        return MediaQuery(
+          data: data.copyWith(
+            textScaler: const TextScaler.linear(1.0),
+            // textScaleFactor: 1,
+          ),
+          child: child!,
+        );
+      },
+      debugShowCheckedModeBanner: false,
+      title: 'Meri Bhakti',
+      theme: ThemeData(
+        primaryColor: AppColors.appBackgroundColor,
+        primarySwatch: primaryOrange,
+        scaffoldBackgroundColor: AppColors.appBackgroundColor,
+        useMaterial3: false,
+      ),
+      home: const SplashScreen(),
+    );
   }
 }
