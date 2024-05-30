@@ -19,4 +19,13 @@ Note:
     fontFamily: 'Poppins',
     color: AppColors.whiteColor,
   );
+
+  /// ************************ [48 pixel text] *************************
+  // 48 Bold Dark Green text style
+  static const fortyEightNormalGreenText = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 48,
+    fontFamily: 'Poppins',
+    color: AppColors.darkGreen,
+  );
 }
