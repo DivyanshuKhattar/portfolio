@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.appBackgroundColor,
         primarySwatch: primaryOrange,
-        scaffoldBackgroundColor: AppColors.appBackgroundColor,
+        scaffoldBackgroundColor: AppColors.lighterGreen,
         useMaterial3: false,
       ),
       home: const SplashScreen(),
